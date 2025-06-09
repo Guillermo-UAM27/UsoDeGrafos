@@ -1,0 +1,20 @@
+¿Qué hace el código?
+Piensa que tienes un mapa con ciudades (A, B, C, D) y carreteras con distancias. El código encuentra la ruta más corta desde una ciudad inicial (A) hasta una final (D), sumando las distancias de las carreteras.
+¿Cómo funciona?
+Usamos un diccionario (grafo) para decir qué ciudades están conectadas y cuánto cuesta ir de una a otra.
+Empezamos en la ciudad inicial (A) con distancia 0.
+Miramos las ciudades vecinas (B y C) y calculamos cuánto cuesta llegar a ellas desde A.
+Siempre elegimos la ciudad más cercana que no hayamos visitado (usando heapq para que sea rápido).
+Actualizamos las distancias si encontramos un camino más corto.
+Guardamos de dónde venimos para cada ciudad, así al final podemos reconstruir la ruta.
+Cuando llegamos a la ciudad final (D), armamos el camino (A -> C -> D) y mostramos la distancia total.
+El mapa de ejemplo:
+Hay 4 ciudades: A, B, C, D.
+Las conexiones son como un mapa de carreteras:
+A está conectada a B (4 km) y C (2 km).
+B está conectada a A (4 km), C (1 km), y D (5 km).
+C está conectada a A (2 km), B (1 km), y D (8 km).
+D está conectada a B (5 km) y C (8 km).
+El código descubre que la ruta más corta de A a D es: A -> C (2 km) -> D (8 km), total 10 km.
+¿Qué imprime?
+Imprime la distancia total (10) y el camino (A -> C -> D).
